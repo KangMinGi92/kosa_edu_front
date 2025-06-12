@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?><!--comment-->
 <!--
   Licensed to the Apache Software Foundation (ASF) under one or more
   contributor license agreements.  See the NOTICE file distributed with
@@ -163,6 +163,7 @@
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
       <Context docBase="workshop05" path="/workshop05" reloadable="true" source="org.eclipse.jst.jee.server:workshop05"/></Host>
+
     </Engine>
   </Service>
 </Server>
