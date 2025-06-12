@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	body{
+		width:960px;
+		margin:0 auto;
+		box-sizing: border-box;
+	}
+	h2{
+		text-align: center;
+	}
+	.playlists{
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-around;
+	}
+	.playlist-thumb{
+		border-radius: 15px;
+		width: 230px;
+	}
+	.playlist-title{
+		margin-top : 10px;
+		font-size: 25px;
+		color : #495057;
+		font-weight: bold;
+	}
+	.playlist-artist{
+		color : #868e96;
+	}
+</style>
+</head>
+<body>
+	<section>
+		<h2 class="section-title">이달의 여행 플레이리스트</h2>
+		<div class="playlists">
+			<div class="playlist">
+				<img class="playlist-thumb" src="./img/p1.jpg">
+				<div class="playlist-title">몰디브 해안에서</div>
+				<div class="playlist-artist">아이유</div>
+			</div>
+			<div class="playlist">
+				<img class="playlist-thumb" src="./img/p2.jpg">
+				<div class="playlist-title">에메랄드빛 고향</div>
+				<div class="playlist-artist">박보검</div>
+			</div>
+			<div class="playlist">
+				<img class="playlist-thumb" src="./img/p3.jpg">
+				<div class="playlist-title">힐링!! 그곳에가자</div>
+				<div class="playlist-artist">손흥민</div>
+			</div>
+			<div class="playlist">
+				<img class="playlist-thumb" src="./img/p4.jpg">
+				<div class="playlist-title">여행을 떠나요</div>
+				<div class="playlist-artist">안세영</div>
+			</div>
+			
+		</div>
+	</section>
+</body>
+</html>
