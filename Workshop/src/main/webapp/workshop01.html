@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>workshop01</title>
+<style>
+	#wrap{
+		border : 5px solid fuchsia;
+		width : 800px;
+		margin : 0 auto;
+	}
+	.image{
+		text-align: center;
+	}
+	#form{
+		margin-left : 50px;
+	}
+	fieldset{
+		width : 600px;
+	}
+</style>
+</head>
+<body>
+	<div id="wrap">
+		<h2 style = "text-align : center;">★★★★ 인사이드 아웃2 ★★★★</h2>
+		<div class=image>
+		<img alt="" src="image/inside.jpg" width="300px" height="500px">
+		</div>
+		<br>
+		<form id="form">
+			<label>상영관</label>
+				<select>
+					<option value="CGV" selected="selected">CGV</option>
+					<option value="롯데시네마">롯데시네마</option>
+					<option value="메가박스">메가박스</option>
+				</select>
+			<label>날짜 선택</label>
+				<input type="date" name="date">
+			<fieldset>
+				<legend>시간선택</legend>
+					<input type="radio" name ="time" checked="checked"> 08:30
+					<input type="radio" name ="time" > 11:00
+					<input type="radio" name ="time" > 14:20
+					<input type="radio" name ="time" > 17:25
+					<input type="radio" name ="time" > 20:10
+					<input type="radio" name ="time" > 23:05
+			</fieldset>
+			
+			<label>요금</label>&nbsp;
+			<del>￦9,000</del> &nbsp;&nbsp; <ins>￦5,000</ins>
+			<br><br>
+			<label>인원</label>
+			<input type="number" name="count" value=0>
+			<br><br>
+			<label>금액</label>
+			<input type="number" name="price" value=0 step="500">
+			<br><br>
+			<input type="checkbox" checked="checked">옵션
+			<fieldset>
+				<input type="checkbox" value="팝콘"> 팝콘
+				<input type="checkbox" value="콜라"> 콜라
+			</fieldset>
+			<br><br>
+		</form>
+	</div>
+</body>
+</html>

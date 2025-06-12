@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>KOSA CSS</title>
+
+<style type="text/css">
+	body{
+		box-sizing:border-box;
+		margin-left:50px;
+		background: black;
+	}
+	.wrap{
+		color:white;
+	}
+	.header-image{
+		width: 20px;
+		height: 20px;
+	}
+	.cover{
+		margin-top: 100px;
+	}
+	.cover-image{
+		width: 300px;
+		height: 400px;
+	}
+	.hot-badge{
+		border-radius: 5px;
+		background: #ddd;
+		font-size: 15px;
+		color : orange;
+	}
+	.artist, .description{
+		margin-bottom:20px;
+		color:gray;
+	}
+	.artist-profile{
+		width: 50px;
+		height: 50px;
+		border-radius: 20px;
+	}
+	.play-button{
+		background: blue;
+		width : 150px;
+		height: 50px;
+		border-radius: 10px;
+	}
+	hr{
+		background:#529ef1;
+    	height:2px;
+    	border:0;
+	}
+</style>
+</head>
+<body>
+	<header>
+		<div class="wrap">KOSA Music
+		<img class="header-image" alt="" src="image/logo.jpg">
+		</div>
+	</header>
+	<main class="wrap">
+		<div class="info">
+			<div class="cover">
+				<img class="cover-image" src="image/cafe.jpg" alt="카페에서 일할 때 커버 이미지">
+			</div>
+			<h1 class="playlist-title">
+				카페에서 일할 때 <span class="hot-badge"> 인기 </span>
+			</h1>
+			<div class="artist">
+				<img src="image/logo.png" alt="kosa 프로필" class="artist-profile">
+				Kosa Coffee
+			</div>
+			<div class="description">차분하게 흐르는 따뜻한 음악과 함께하는 휴식.KOSA Music
+				에디터가 매달 업데이트하는 플레이리스트입니다. 마음에 드는 곳이 있다면 보관함에 추가해 보세요.</div>
+			<button class="play-button">▶️ 지금 듣기</button>
+		</div>
+		<br>
+		<hr>
+	</main>
+</body>
+</html>
