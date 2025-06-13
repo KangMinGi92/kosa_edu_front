@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>복합연산자</title>
+
+</head>
+<body>
+<h2 align="center">========================on load=======================</h2>
+<div id="wrap">
+
+</div>
+</body>
+</html>
+<script type="text/javascript">
+//1. 복합연산
+var list='';
+list += '<ul>';
+list += '<li>아메리카노</li>';
+list += '<li>카페라떼</li>';
+list += '<li>카라멜 마키아토</li>';
+list += '<li>카라멜 모카</li>';
+list += '</ul>';
+
+//2. html wrap부분에 부착
+// wrap부분을 Document에서 찾아서 해당부분에 부착...
+document.getElementById("wrap").innerHTML = list;
+</script>

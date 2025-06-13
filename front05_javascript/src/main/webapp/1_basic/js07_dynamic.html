@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!--
+script부분을 완성합니다.
+1,2,3모든 내용은 버튼을 클릭하면 이루어 집니다.
+1. 버튼 클릭하면 span 영역이 보이도록 작성
+2. id가 today인 영역의 내용을 Hello Everyone~~으로 변경
+	글자색은 blue
+3. id가 edu인 영역의 내용을 ChartJS 수업으로 변경
+	글자색은 blue
+-->
+<style>
+	.edit{
+		display: none;
+	}
+</style>
+<script type="text/javascript">
+	/* function put(){
+		let today = "Hello Everyone~~";
+		let edu = "ChartJS";
+		document.querySelector(".edit").setAttribute('style','display:block');
+		document.querySelector("#today").innerHTML = today;
+		document.querySelector("#edu").innerHTML = edu;
+		document.querySelector("#today").style.color='blue';
+		document.querySelector("#edu").style.color='blue';
+	} */
+	const put=()=>{
+		
+		document.querySelector(".edit").setAttribute('style','display:block');
+		
+		let today=document.querySelector("#today");
+		today.innerHTML = "Hello James~~";
+		today.style.color='blue';
+		
+		let edu = document.querySelector("#edu");
+		edu.innerHTML = "ChartJS";
+		edu.style.color='blue';
+		
+		//form에 값을 입력하거나 입력된 값을 받아올때...value
+		document.getElementById("name").value="James";
+	}
+</script>
+</head>
+<body>
+<h2 id="today">오늘은 금요일입니다.</h2>
+<h2 id="edu">KOSA 금요일 자바스크립트 수업</h2>
+<hr>
+<button onclick="put()">Input Name</button>
+<span class="edit">NAME<input type="text" name="name" id="name"></span>
+</body>
+</html>

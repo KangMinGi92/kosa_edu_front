@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>복합연산자</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="text/javascript">
+//브라우저 메모리에 html document가 다 로드 될때까지 이부분이 작동하지 않는다.
+/* window.onload=()=>{ 
+		var list='';
+	list += '<ul>';
+	list += '<li>아메리카노</li>';
+	list += '<li>카페라떼</li>';
+	list += '<li>카라멜 마키아토</li>';
+	list += '<li>카라멜 모카</li>';
+	list += '</ul>';
+	//document.getElementById("wrap").innerHTML = list;
+	document.querySelector("#wrap").innerHTML = list;	
+} */
+
+/* $(document).ready(function(){
+		var list='';
+		list += '<ul>';
+		list += '<li>아메리카노</li>';
+		list += '<li>카페라떼</li>';
+		list += '<li>카라멜 마키아토</li>';
+		list += '<li>카라멜 모카</li>';
+		list += '</ul>';
+		//document.getElementById("wrap").innerHTML = list;
+		document.querySelector("#wrap").innerHTML = list;
+	}); */
+	
+$(() => {
+	var list='';
+	list += '<ul>';
+	list += '<li>아메리카노</li>';
+	list += '<li>카페라떼</li>';
+	list += '<li>카라멜 마키아토</li>';
+	list += '<li>카라멜 모카</li>';
+	list += '</ul>';
+	//document.getElementById("wrap").innerHTML = list;
+	document.querySelector("#wrap").innerHTML = list;
+	});
+
+
+</script>
+</head>
+<body>
+<h2 align="center">========================on load=======================</h2>
+<div id="wrap">
+
+</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+
+/* 	var func=function() {
+		alert("익명함수 호출....");
+	} */
+	//화살표 함수는 function을 생략하고 => 대체한다 (es6문법 ECMA 2015)
+	var func=()=> {
+		alert("익명함수 호출....");
+	}
+	
+	function func(){
+		alert("선언적 함수 호출...");
+	}
+	
+	func(); //선언적 함수가 먼저 메모리에 등록된 후, 익명함수가 덮어 씌워서 최종적으로 익명함수가 호출된다.
+</script>
+</body>
+</html>
