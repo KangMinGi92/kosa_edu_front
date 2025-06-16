@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Button의 onclick속성활용</title>
+<script type="text/javascript">
+	function push(){
+		//1. content 영역을 받아와서(querySelector)
+		const content = document.querySelector("#content");
+		//2. 1번의 영역에 Hello JavaScript~~내용 변경되도록 한다.
+		// 이때 글자 색깔은 crimson으로 한다.
+		content.innerHTML = "Hello JavaScript~~";
+		content.setAttribute('style',"color : crimson");
+	}
+</script>
+</head>
+<body>
+<h1>Javascript란?</h1>
+<p id="content">JavaScript is the world's most popular programming language.</p>
+<button onclick="push()">CLICK</button>
+</body>
+</html>

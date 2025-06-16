@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>3. addEventListener</title>
+</head>
+<body>
+<h1>Javascript란?</h1>
+<p id="content">JavaScript is the world's most popular programming language.</p>
+<button>CLICK</button>
+<script>
+	let btn=document.querySelector('button');
+	btn.addEventListener('click', ()=>{
+		const content = document.querySelector("#content");
+		content.innerHTML = "Hello JavaScript~~";
+		content.setAttribute('style',"color : crimson");
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<style>
+	.container{
+		border: 2px solid black;
+		margin: 0 auto;
+		padding: 10px;
+		border-radius: 6px;
+	}
+	.wrap{
+		
+		display: flex;
+		flex-flow: row;
+		justify-content: center;
+	}
+	.chart-container{
+		width: 600px;
+		height: 500px;
+	}
+
+</style>
+</head>
+<body>
+	<div class="container">
+		<div class="jumbotron text-center">
+			<h2>A항공사 년도별 승객수 누적현황 차트 통계</h2>
+		</div>
+		<div class="wrap">
+			<div class="chart-container">
+				<canvas class="bar-chart"></canvas>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		const ctx = document.querySelector(".bar-chart");
+		let data_2022 = {
+			label : '2022년',
+			data : [ 100, 98, 108, 103, 112, 118, 120, 119, 98, 85, 100, 101 ],
+
+			backgroundColor : 'rgba(255,0,0,0.2)',
+			borderColor : 'crimson',
+			borderWidth : 2
+
+		};
+		let data_2023 = {
+			label : '2023년',
+			data : [ 102, 100, 118, 107, 119, 119, 125, 145, 101, 100, 103, 120 ],
+
+			backgroundColor : 'rgba(0,0,255,0.2)',
+			borderColor : 'SlateBlue',
+			borderWidth : 2
+		};
+		let month = [ '1월 승객수', '2월 승객수', '3월 승객수', '4월 승객수', '5월 승객수',
+				'6월 승객수', '7월 승객수', '8월 승객수', '9월 승객수', '10월 승객수', '11월 승객수',
+				'12월 승객수' ];
+
+		let config = {
+			type : 'bar',
+			data : {
+				labels : month,
+				datasets : [ data_2022, data_2023 ],
+			},
+			options : {
+				maintainAspectRatio : false,
+				scales : {
+					x : {
+						ticks:{
+							maxRotation:45,
+							minRotation:45,
+						}
+					},
+					y : {
+						min : 0,
+					}
+				}
+			}
+		}
+		new Chart(ctx, config);
+	</script>
+</body>
+</html>

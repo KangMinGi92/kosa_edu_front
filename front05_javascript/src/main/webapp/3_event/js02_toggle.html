@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Toggle :: 껐다 | 켰다</title>
+</head>
+<body>
+<h2>What is JavaScript?</h2>
+<p>It can update and change both HTML and CSS.</p>
+<p>The example below "finds" an HTML element (with id="demo"), and changes the element content (innerHTML) to "Hello JavaScript":</p>
+
+<button id="turnOn" style = "display : none">Turn on the light</button>
+<img style="width: 150px"
+	src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBjIqomV_U0yzzlg3NlB5qtbYCJQRj3AulUA&usqp=CAU">
+	
+<button id="turnOff">Turn off the light</button>
+</body>
+<!-- 2번째 방법으로 버튼을 클릭했을때 Toggle 효과가 나타나도록 이벤트를 구현  -->
+<script>
+	const btnOn = document.querySelector('#turnOn');
+	const btnOff = document.querySelector('#turnOff');
+	const img = document.querySelector("img");
+	btnOff.onclick = turnOn;
+	btnOn.onclick = turnOff;
+	function turnOn(){
+		btnOn.setAttribute('style','display:inline-block');
+		btnOff.setAttribute('style','display:none');
+		//이미지 속성값을 변경
+		img.setAttribute('src',"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkhVXo0PStCaz-E5mudcAtsDhV53vPXqpUFQ&usqp=CAU");
+	}
+	function turnOff(){
+		btnOn.setAttribute('style','display:none');
+		btnOff.setAttribute('style','display:inline-block');
+		img.setAttribute('src',"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBjIqomV_U0yzzlg3NlB5qtbYCJQRj3AulUA&usqp=CAU");
+	}
+</script>
+</html>

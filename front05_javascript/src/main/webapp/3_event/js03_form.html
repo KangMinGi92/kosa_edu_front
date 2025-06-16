@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>폼값 핸들링</title>
+<script>
+	function showName(){
+		//1. 폼에 입력된 값을 받아서 alert창으로 출력
+		let nick = document.getElementById("nick").value;
+		alert(nick);
+		
+		//2. 다시 폼 값을 초기화
+		document.getElementById("nick").value = "";
+		
+		//3. 포커스를 맞춰놓는다.
+		document.getElementById("hobby").focus();
+	
+	}
+	function showHobby(){
+		//form의 name속성으로도 값을 가져올 수 있다.
+		let hobby = document.frm.hobby.value;
+		alert(hobby);
+		
+		document.frm.hobby.value = "";
+		document.frm.nick.focus();
+	}
+	
+
+</script>
+</head>
+<body>
+<h2>Form Event Handling</h2>
+<form action="FS" name="frm" >
+	닉네임<input type="text" name="nick" id="nick"> 
+		<input type="button" value="닉네임보기" onclick="showName()"> 
+		<br><br>
+	취미 <input type="text" name="hobby" id="hobby"> 
+		<input type="button" value="취미보기" onclick="showHobby()"> 
+</form>
+</body>
+
+</html>

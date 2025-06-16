@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Js의 .onclick으로 함수 맵핑</title>
+</head>
+<body>
+<h1>Javascript란?</h1>
+<p id="content">JavaScript is the world's most popular programming language.</p>
+<button>CLICK</button>
+<script>
+//1. button을 클릭하면 자바스크립트 함수로 바로 연결
+//onclick="push()"
+	document.querySelector('button').onclick = push; 
+	//호출을 바로하는게 아니라 이벤트가 발생할때 push호출 즉, 맵핑만 시켜둔상태
+	
+	function push(){
+		const content = document.querySelector("#content");
+		content.innerHTML = "Hello JavaScript~~";
+		content.setAttribute('style',"color : crimson");
+	}
+</script>
+</body>
+</html>

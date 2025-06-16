@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+.chart-container {
+	margin: 0 auto;
+	width: 500px;
+	height: 500px;
+	margin-top: 40px;
+	/* background: #ECFAE5; 그래프의 비율을 유지하면서 배경색이 깔려야하는데*/
+}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="chart-container">
+		<canvas id="bar-chart"></canvas>
+	</div>
+
+	<script>
+		const ctx = document.getElementById("bar-chart");
+		const ename = [ 'SMITH', 'FORD', 'TURNER', 'KING', 'ADAMS' ];
+
+		let emp_sal_data = {
+			label : 'Employee Salary',
+			data : [ 800, 3000, 2100, 5000, 2800 ],
+
+			//그래프 안에 배경색
+			backgroundColor : 'rgba(255,0,0,0.3)',
+			borderColor : 'rgb(200,0,0)',
+			borderWidth : 2,
+		};
+
+		let emp_bonus_data = {
+			label : 'Employee bonus',
+			data : [ 100, 50, 70, 0, 60 ],
+
+			//그래프 안에 배경색
+			backgroundColor : 'rgba(0,0,255,0.5)',
+			borderColor : 'rgb(0,0,200)',
+			borderWidth : 2,
+		};
+
+		console.log(typeof ename, typeof emp_sal_data);
+
+		//type, data, options 이 세가지 구성요소를 config에 담는다.
+		let config = {
+			type : 'bar',
+			data : {
+				labels : ename,
+				datasets : [emp_sal_data, emp_bonus_data],
+			},
+			options : {
+				maintainAspectRatio : false,
+			}
+		};
+		
+		new Chart(ctx, config);
+	</script>
+</body>
+</html>
