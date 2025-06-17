@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JQuery Selector...</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+/* $(document).ready({
+}); */
+
+$(()=>{
+
+	//1. id값이 header인 태그의 직계자식인 span태그를 선택자로 지정
+	// html()이용..Jquery Selector Test...
+	// css()이용..글자색을 crimson
+	$('#header>span').html("Jquery Selector Test").css('color','crimson');
+	
+	//2. h2태그의 자식인 span을 선택자로...배경색을 gray
+	$('h2 span').css('backgroundColor','gray');
+	
+	//3. 첫번째 p태그를 선택자로 지정..내용을 "첫번째 문장입니다.로 변경
+	/* $('p:first').html("첫번째 문장입니다.");
+	$('p:last').html("마지막 문장입니다."); */
+	
+	/* $('p').first().html("첫번째 문장입니다.");
+	$('p').last().html("마지막 문장입니다."); */
+	
+	//동일한 태그가 여러개 존재할때 사용하는 선택자 기법
+	$('p:eq(0)').html("첫번째 문장입니다.");
+	$('p:eq(1)').html("두번째 문장입니다.");
+	$('p:eq(2)').html("마지막 문장입니다.");
+	
+	//4. 버튼이 보이지 않도록
+/* 	$('button').css('display','none'); */
+	$('button').hide();
+	
+	//5. p태그와 h2태그를 모두 선택자로 지정.. 글자를 가운데 정렬
+	$('p,h2').css('textAlign','center');
+	
+	//6. 클래스 속성값이 theme를 선택자로..경계선을 지정
+	$('.theme').css('border','1px solid blue');
+	
+});
+
+</script>
+</head>
+<body>
+	<h2 id="header">	
+		<span>This is a heading</span>
+	</h2>	
+	<p>This is a paragraph.</p>
+	<p class="content">This is another paragraph1.</p>
+	<p class="content theme">This is another paragraph2.</p>	
+	
+	<button>Click me to hide paragraphs</button>
+	<b>이 부분은 bold 하게 출력됩니다.</b>
+</body>
+</html>

@@ -57,7 +57,30 @@
 </style>
 <script type="text/javascript">
 	function btn() {
-		location.href = "./index.html";
+		//자바스크립트에서 특정한 html페이지로 이동할때
+		
+		location.href = "workshop11/index.html";
+	}
+	function login(){
+		let email = document.querySelector('#email');
+		let pass = document.querySelector('#password');
+		if(pass.value =""){
+			alert("비밀번호를 입력해주세요");
+			pass.focus();
+			return false;
+		}
+		if(email.value ==""){
+			alert("이메일를 입력해주세요");
+			email.focus();
+			return false;
+		}
+		//이 부분을 타면은... 모든 값을 입력했다는 의미가 된다.
+		alert("모든 정보 입력 완료");
+		//action에 걸려진 페이지로 이동하려는 기본 이벤트를 막아둔다.
+		/* e.preventDefault(); */
+	}
+	function validation(event){
+		event.preventDefault();
 	}
 </script>
 <title>KB My Life - login</title>
@@ -66,9 +89,9 @@
 	<div id="container">
 		<nav>
 			<ul>
-				<li class="nav-item logo"><img src="logo.jpg" alt=""></li>
-				<li class="nav-item"><a href="./">개인</a></li>
-				<li class="nav-item"><a href="./">기업</a></li>
+				<li class="nav-item logo"><a href="./"><img src="logo.jpg" alt=""></a></li>
+				<li class="nav-item"><a href="./personal.html">개인</a></li>
+				<li class="nav-item"><a href="./business.html">기업</a></li>
 				<li class="nav-item"><a href="./login.html">로그인</a></li>
 				<li class="nav-item"><a href="./register.html">회원가입</a></li>
 			</ul>
@@ -76,7 +99,7 @@
 		<div id="banner">지금 당신의 행복! KB Life!</div>
 		<div id="login">
 			<h1>Login</h1>
-			<form action="">
+			<form action="Fs" onsubmit="validation(event)">
 				<div class="form-item">
 					<label for="email">이메일</label> 
 					<input type="text" id="email">
@@ -86,7 +109,8 @@
 					<input type="password" id="password">
 				</div>
 				<hr>
-				<button>로그인</button>
+				<!-- input type=submit -->
+				<button onclick = "login()">로그인</button>
 
 				<button type="button" onclick="btn()">홈</button>
 			</form>
