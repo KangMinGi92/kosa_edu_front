@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(()=>{
+	//1. 버튼 클릭하면 함수호출..
+	$('#createBtn').on('click',function(){
+	//2. 버튼의 타이틀을 받아와서 div영역에 출력
+		/* let title=$(this).val(); */
+		//$('#resultView').html(title+"<p>");
+		/* $('#resultView').append(title); */
+		
+	//3. html()사용... 그런데 append() 썼을때와 동일하게 출력되도록
+	/* 	let result=$('#resultView').html();
+		$('#resultView').html(result + title +"<p>"); */
+		
+	});//on
+	
+	//4. select 폼에서 option 값을 변경할때마다 이벤트를 호출
+	//resultView영역에 선택된 option 값이 계속 출력 되도록... html
+	$('#createSel').on('change',function(){
+		let result=$('#resultView').html();
+		$('#resultView').html(result+$(this).val()+"<p>");
+	});
+	
+	
+	
+})
+</script>
+</head>
+<body>
+<input type="button" value="버튼 클릭시 동적으로 문자열 생성" id="createBtn">
+<select id="createSel">
+	<option>SK텔레콤 서비스 대학로점</option>
+	<option>SK텔레콤 서비스 구로역점</option>
+	<option>SK텔레콤 서비스 삼성대로점</option>
+	<option>SK텔레콤 서비스 신림점</option>
+	<option>SK텔레콤 서비스 종로3가점</option>
+</select>
+
+<div id="resultView"></div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#present{
+	border : 2px solid #ddd;
+}
+.color{
+	color : crimson;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(()=>{
+	$('#present').on('click',function(){
+		//future 영역에 h2크기로 KOSA MSA 3차 FrontEnd Project Start!!
+		$('#future').append($('<h2 id=hello>').text("KOSA MSA 3차 FrontEnd Project Start!!")).addClass('color');
+	});//on
+	$('#future').on('click','#hello',hello);
+	
+	function hello(){
+		alert("쉬었다 합니다~~!!");
+	}
+});
+
+</script>
+</head>
+<body>
+<div id="present">
+	<h1>Syntax :: $('selector').on('click','#hello','hello)</h1><!--여기서 selector는 부모태그를 기준으로 잡는다.-->
+	<p>아이디값이 hello인 영역을 클릭하면 hello 함수가 그때 호출될것이다.</p>
+	<p>지금은 hello 영역이 보이지 않고 나중에 동적으로 그 영역이 만들어집니다.</p>
+	<p>on은 미래에 동적으로 생성되는 영역을 클릭할 경우를 위해서 만들어진 함수!!</p>
+</div>
+<div id="future">
+
+</div>
+</body>
+</html>

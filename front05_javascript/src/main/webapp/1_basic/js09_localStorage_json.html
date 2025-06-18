@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="main">
+	<input type="text" id="id">
+	<input type="password" id="pwd">
+	<button id="login-btn">LOGIN</button>
+</div>
+<script>
+	const idForm = document.getElementById("id");
+	const pwdForm = document.getElementById("pwd");
+	const loginBtn = document.getElementById("login-btn");
+	
+	loginBtn.addEventListener('click',()=>{
+		//1. 로컬스토리지에 각각의 값을 저장 "id","pwd"
+		let userInfo = {id:idForm.value, pwd:pwdForm.value};
+		console.log(JSON.stringify(userInfo));
+		localStorage.setItem("userInfo",JSON.stringify(userInfo));
+		
+		//2. 로컬스토리지에 저장된 데이터를 다시 가져올때 덩어리로 
+		let result=JSON.parse(localStorage.getItem("userInfo"));
+		//console.log("result => "+result);
+		console.log(result);
+		console.log("ID => "+result.id);
+		console.log("PWD => "+result.pwd);
+	});
+</script>
+</body>
+</html>

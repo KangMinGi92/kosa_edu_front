@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+</style>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+/*
+1. id, name 폼의 공란을 확인...공백일때 alert창으로 메세지 띄우고,
+	마우스 포커스 맞추고, 페이지가 안넘어가도록...
+2. checkbox...하나 이상의 취미를 선택하도록
+	하나도 선택안되었다면...alert창으로 메세지 띄우고
+	하나 이상의 취미가 선택 되었다면... $.each() 사용해서 메세지 띄우고..alert()1번만
+
+3. 서버로 전송하기 직전... confirm창 사용..."3개 취미를 선택하셨습니다.. 전송하시겠습니까?"
+	확인 -- 06_result.jsp
+	취소 --
+*/
+$(()=>{
+	$('#frm').submit((e)=>{
+		if($('#id').val().trim()==""){
+			alert("아이디 입력!");
+			$('#id').focus();
+			return false; //페이지 이동 막는방법
+		}
+		if($('#name').val().trim()==""){
+			alert("이름 입력!");
+			$('#name').focus();
+			return false;
+		}
+		
+		let hobbyArr = $('[name=hobby]:checked');
+		let str="";
+		if(hobbyArr.length==0){
+			alert("취미는 하나 이상 선택하시기 바랍니다.");
+			return false;
+		}else{
+			$.each(hobbyArr,(index,item)=>{
+				//str+= item.value+" "; //JavaScript
+				str += $(item).val(); // Jquery
+				//str+= item.val()+" "; // JavaScript + Jquery=> Error!!
+			});
+		}//
+		return confirm("당신은 "+hobbyArr.length+" 개의 취미를 선택하셨군요! 전송하시겠습니까?");
+/* 		let id = $('#id');
+		let name = $('#name');
+		
+		if(id.val().trim()==""){
+			e.preventDefault();
+			alert("아이디를 입력해주세요.");
+			id.focus();
+		}else if(name.val().trim()==""){
+			e.preventDefault();
+			alert("이름을 입력해주세요.");
+			name.focus();
+		}else{
+			let count=0;
+			let arrHobby=[];
+			$('[name=hobby]').each((index,hobby)=>{
+				if(hobby.checked == true){
+					arrHobby.push(hobby.value);
+					count++;
+				}
+			});
+			if(count==0){
+				e.preventDefault();
+				alert("한개이상의 취미를 선택해주세요")
+			}else{
+				let str="";
+				arrHobby.forEach(item=>{
+					str +=item+" ";
+				});
+				alert("선택한 취미는 "+str+" 입니다.");
+				
+				return confirm(count+"개 취미를 선택하셨습니다.. 전송하시겠습니까?");
+			}
+		} */
+	});//submit
+});//ready
+</script>
+</head>
+<body>
+	<!--폼 값을 가지고 action에 등록되 페이지로 이동....submit  -->
+	<form action="06_result.jsp" id="frm">
+		ID <input type="text" name="id" id="id">
+		<p>
+			NAME <input type="text" name="name" id="name">
+		<p>
+		<p>
+
+			<strong>당신의 취미를 있는대로 다 고르세요.</strong>
+		<p>
+			<input type="checkbox" name="hobby" value="fishing">낚시<br>
+			<input type="checkbox" name="hobby" value="music">음악듣기<br>
+			<input type="checkbox" name="hobby" value="mountain climbing">등산<br>
+			<input type="checkbox" name="hobby" value="driving">드라이브<br>
+			<input type="submit" value="ServerSend">
+	</form>
+</body>
+</html>

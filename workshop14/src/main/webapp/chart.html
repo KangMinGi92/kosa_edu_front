@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+ .container{
+	margin: 0 auto;
+}
+.chart-container{
+	margin: 0 auto;
+}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(()=>{
+	const ctx = $('#pie-chart');
+	const DATA_COUNT = 5;
+
+
+	const data = {
+	  labels: ['Analyst', 'Manager', 'Engineer', 'SalesMan', 'Clerk'],
+	  datasets: [
+	    {
+	      label: 'Dataset 1',
+	      data:[350, 1000, 2800, 3560, 860],
+	      hoverOffset: 200
+	    }
+	  ]
+	};
+	const config = {
+			  type: 'pie',
+			  data: data,
+			  options: {
+			    responsive: true,
+			    plugins: {
+			      legend: {
+			        position: 'top',
+			      },
+			      title: {
+			        display: true,
+			        text: 'Oracle Employee Job 점유율',
+			       	font: {
+			       		size: 30
+			       	}
+			      }
+			    }
+			  },
+			};
+	new Chart(ctx,config);
+});
+</script>
+</head>
+<body>
+<div class=container>
+	<div class="chart-container">
+		<canvas id="pie-chart"></canvas>
+	</div>
+</div>
+</body>
+</html>

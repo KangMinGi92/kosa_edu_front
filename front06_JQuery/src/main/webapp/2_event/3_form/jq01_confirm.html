@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>confirm (확인 | 취소) | alert | prompt </title>
+<style type="text/css">
+
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(()=>{
+	//1. a태그 속성 href값중에 school이라는 단어가 포함된 사이트를 클릭하면...
+	// click(), on('click'), bind('click')
+	$('a[href*=school]').on('click',function(/* event */){
+		/* event.preventDefault(); */
+		/*return confirm($(this).text()+" 사이트로 이동 하시겠습니까?"); */
+		/* let name=$(this).text();
+		return confirm(`${name} 사이트로 이동 하시겠습니까?`); */
+		
+		//일반 this를 사용하면 javascript문법이므로 .뒤에 사용함수를 주의해야한다.
+		return confirm(this.innerHTML+"사이트로 이동 하시겠습니까?"); 
+	});
+});
+</script>
+</head>
+<body>
+<h2><a href="http://www.jquery.com">JQuery</a></h2>
+<h2><a href="http://www.w3schools.com/">W3School</a></h2>
+</body>
+</html>
