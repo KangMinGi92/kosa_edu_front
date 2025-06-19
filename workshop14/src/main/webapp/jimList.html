@@ -5,14 +5,51 @@
 <title>KOSA DVD</title>
 <link rel="stylesheet" type="text/css" href="css/basic.css"/>
 <style type="text/css">
-	
+	.poster{ width : 150px; height:150px;}
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 $(function() {
+
+	refreshPage();
 	
+	//삭제 버튼을 클릭시 localStroage에서 삭제를 진행
+	$('#content').on('click','#delBtn',deleteCartStorage);
+});//ready
+
+function refreshPage(){
+	let html='';
+	let totalPrice=0;
+	//localStorage에 저장된 데이터를 가져온다...getItem()
+	for(let key in localStorage){
+		//alert(key);
+		if(key=='length') break;
+		let data = localStorage.getItem(key).split(","); //aaa,a.jpg,3000;
+		//alert(data.length);
+		html += `<tr>
+				<td><img class='poster' src='${data[1]}'</td>
+				<td>${key}</td>
+				<td>${data[0]}</td>
+				<td>${data[2]}</td>
+				<td><button id="delBtn" value="${key}">삭제</button></td>
+				</tr>`;
+				
+		totalPrice += parseInt(data[2]);
+	}//for 
 	
-});
+	$('#content').html(html);
+	$('#price').html("총 주문 가격 "+totalPrice+" 원");
+}
+
+function deleteCartStorage(){
+	//삭제 버튼이 클릭시 localStorage에 있는 데이터를 삭제
+	let data = localStorage.getItem($(this).val()).split(",");
+	let y = confirm(data[0]+" 을 삭제하시겠습니까?");
+	if(y){
+		localStorage.removeItem($(this).val());
+		refreshPage();
+	}
+}
 </script>
 </head>
 <body>
